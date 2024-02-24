@@ -1,9 +1,14 @@
-import { Button, View, Text } from "react-native";
+import { View } from "react-native";
+import ProgressBar from "../../components/progress-bar";
+import HeaderProfile from "../../components/header-profile";
+import AlarmList from "../../components/alarm-list/alarm";
 
 export default function Home() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
+    <View style={{ padding: 16 }}>
+      <HeaderProfile />
+      <ProgressBar />
+      <AlarmList />
     </View>
   );
 }
