@@ -8,8 +8,7 @@ export default function ProgressBar() {
         <Text
           style={{
             fontSize: 16,
-            fontWeight: "600",
-            color: "#568F9C",
+            color: "#468091",
             textAlign: "center",
           }}
         >
@@ -19,7 +18,7 @@ export default function ProgressBar() {
           style={{
             fontSize: 16,
             fontWeight: "600",
-            color: "#568F9C",
+            color: "#468091",
             textAlign: "center",
             marginTop: 8,
           }}
@@ -29,11 +28,11 @@ export default function ProgressBar() {
       </View>
       <View>
         <AnimatedCircularProgress
-          size={200}
-          width={3}
-          backgroundWidth={30}
+          size={180}
+          width={12}
+          backgroundWidth={24}
           style={{
-            shadowColor: "#000",
+            shadowColor: "#EBFAFF",
             shadowOffset: {
               width: 0,
               height: 4,
@@ -45,7 +44,7 @@ export default function ProgressBar() {
           }}
           fill={70}
           tintColor="#00e0ff"
-          backgroundColor="#ffff"
+          backgroundColor="#EBFAFF"
         >
           {(fill) => (
             <View
