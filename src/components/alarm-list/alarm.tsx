@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Button, Switch, View, Text, TouchableHighlight } from "react-native";
+import { Switch, View, Text, TouchableHighlight } from "react-native";
 import Icon from "@expo/vector-icons/Feather";
+import FontAwesome from "@expo/vector-icons/FontAwesome6";
 
-export default function Alarm() {
+export default function Alarm({ isEditable = true }) {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <View
@@ -13,6 +14,7 @@ export default function Alarm() {
         backgroundColor: "white",
         padding: 8,
         borderRadius: 16,
+        minHeight: 80,
       }}
     >
       <View
@@ -23,12 +25,19 @@ export default function Alarm() {
           gap: 4,
         }}
       >
-        <Switch
-          trackColor={{ false: "#D8D8D9", true: "#31CCF4" }}
-          onChange={() => setIsChecked(!isChecked)}
-          thumbColor={"#f4f3f4"}
-          value={isChecked}
-        />
+        {isEditable ? (
+          <Switch
+            trackColor={{ false: "#D8D8D9", true: "#31CCF4" }}
+            onChange={() => setIsChecked(!isChecked)}
+            thumbColor={"#f4f3f4"}
+            value={isChecked}
+          />
+        ) : (
+          <View style={{ marginHorizontal: 14 }}>
+            <FontAwesome name="glass-water" size={24} color={"#31CCF4"} />
+          </View>
+        )}
+
         <View
           style={{
             display: "flex",
@@ -38,10 +47,12 @@ export default function Alarm() {
           }}
         >
           <View style={{ display: "flex", gap: 4 }}>
-            <Text style={{ color: "#468091", fontWeight: "bold" }}>
+            <Text
+              style={{ fontSize: 16, color: "#468091", fontWeight: "bold" }}
+            >
               02:00 PM
             </Text>
-            <Text style={{ color: "#468091" }}>250ml</Text>
+            <Text style={{ fontSize: 16, color: "#468091" }}>250ml</Text>
           </View>
         </View>
       </View>

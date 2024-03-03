@@ -1,10 +1,19 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-
+import { View } from "react-native";
+import ProgressBar from "../../components/progress-bar";
+import { Chart } from "../../components/chart";
+import AlarmList from "../../components/alarm-list/index";
+import { ScrollView } from "react-native";
 export default function Stats() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Stats Page</Text>
-    </View>
+    <ScrollView>
+      <View style={{ backgroundColor: "white", height: "100%" }}>
+        <View style={{ padding: 16 }}>
+          <Chart />
+        </View>
+        <View style={{ marginTop: "auto" }}>
+          <AlarmList isEditable={false} />
+        </View>
+      </View>
+    </ScrollView>
   );
 }

@@ -39,16 +39,6 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="Profile"
-            component={Profile}
-            options={{
-              tabBarShowLabel: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="person-circle" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
             name="Stats"
             component={Stats}
             options={{
@@ -59,6 +49,16 @@ export default function App() {
                   color={color}
                   size={size}
                 />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              tabBarShowLabel: false,
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="person-circle" color={color} size={size} />
               ),
             }}
           />
